@@ -1,0 +1,53 @@
+@import '~style/helpers';
+
+.DwidgetBody,.HwidgetBody{
+    overflow-x: auto;
+    width: 340px;
+    border-radius: 20px;
+    margin: 0 auto;
+    table{
+        border-collapse: collapse;
+        background: silver;
+        th{
+            padding: 2px;
+        }
+        td{
+            color:white;
+            padding: 2px;
+            border-top:1px solid white;
+        }
+    }
+}
+
+//if time=enough, modify this for vertical colomn
+// .HwidgetBody{
+
+//         table {
+//             display: flex;
+//             flex-direction: column;
+//           }
+          
+//           thead {
+//             display: flex;
+//             flex-direction: row;
+//           }
+          
+//           tr {
+//             display: flex;
+//             flex-direction: column;
+//           }
+          
+//           td,
+//           th {
+//             width: 10%;
+//             display: block;
+//           }
+          
+//     }
+
+// }
+/* width of scrollbar */
+::-webkit-scrollbar {
+	height: 5px;
+}
+  
