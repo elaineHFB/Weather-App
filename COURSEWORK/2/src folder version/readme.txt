@@ -1,0 +1,2 @@
+3/21 8:32pm its possible that the reason it crash was because of the componet/widgts/headerwidgets.js
+ I added an image icon in js file. but not sure was that because openweather was refreshing data or because my modify.

@@ -1,0 +1,99 @@
+@import '~style/helpers';
+
+///////////////////////////////////////////////////////////////////////////////////
+
+// Burger menu
+.burger {
+    float: left; // Modified by Leon, Makes the Icon float to the left and the div is restricted to the Icon
+    position: absolute;
+    top: 62px;
+}
+
+// Burger icon
+.burger img {
+    background-color: rgba(217, 217, 217, 0.7);
+    padding: 0.3rem;
+    border-radius: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+/////////////////////////////////////////////////////////////////////////////////
+
+// I have 2 sidebars, open and closed basically styled the same,
+// so that the transition looks smoother.
+
+// Sidebar
+.sidebar {
+    visibility: hidden;
+    font-size: 2rem;
+    position: absolute; // Makes it stay on the left
+    top: 7rem;
+    width: 20rem;
+    transform: translateX(-120%); // Hides it from view if burger not open
+    transition: all 0.5s; // Time for transitioning the sidebar out
+}
+
+// Sidebar li elements
+.sidebar li{
+    padding-top: 6rem;
+    list-style-type: none; // No bullet points
+    height: 15rem;
+    background-color: silver;
+    color: black;
+}
+
+// Hovering the sidebar options
+.sidebar li:hover{
+    background-color: black;
+    color: silver;
+}
+////////////////////////////////////////////////////////////////////////////////
+
+// This is where the sidebar is open.
+
+// When burger clicked, show the sidebar's options
+.sidebar--open{
+    font-size: 2rem;
+    position: absolute; // Makes it stay on the left
+    top: 7rem;
+    width: 20rem;
+    transform: translateX(10%); // Hides it from view if burger not open
+    transition: all 0.5s; // Time for transitioning the sidebar out
+}
+
+// Sidebar open li elements
+.sidebar--open li{
+    padding-top: 6rem;
+    list-style-type: none;
+    height: 15rem;
+    background-color: silver;
+    color: black;
+}
+
+// Hovering the open sidebar options
+.sidebar--open li:hover{
+    background-color: black;
+    color: silver;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+
+// Backdrop was originally for tapping outside of the sidebar options
+
+// Backdrop is for exiting burger menu
+.backdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+    opacity: 20%;
+    display: none;
+}
+
+// Display the backdrop whenever the burger menu is open
+.backdrop--open{
+    display: block;
+}

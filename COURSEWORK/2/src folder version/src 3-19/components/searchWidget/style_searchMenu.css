@@ -1,0 +1,34 @@
+/* A CSS file is required to use the @keyframe rule properly, there seems to be a bug
+with LESS and keyframes as discussed here - https://github.com/webpack-contrib/css-loader/issues/264 */
+
+@keyframes example {
+    0% {
+        /* background-color: red; */
+        transform: translateY(100%);
+    }
+    100% {
+        /* background-color: yellow; */
+        transform: translateY(0%);
+    }
+  }
+
+.searchMenu{
+    font-size: 2rem;
+    background: linear-gradient(180deg, rgba(151, 151, 151, 0.9) 14.42%, #454545 100%);
+    width: 393px;               /* Same as iphone Dimensions */
+	height: 665px;              /* Sets the height just above the search box*/
+
+    position: absolute;             /* Fix the location of the search menu*/
+    top: 112px;
+	border-radius: 20px;
+	overflow: hidden;
+
+    /*margin: -0.5rem;   */             /* This offsets the margin applied within style.less in /iphone */
+
+    padding-top: 3%;
+
+    animation-name: example;
+    animation-duration: 1s;
+}
+
+/* https://blog.hubspot.com/website/css-animation-not-working#:~:text=Even%20if%20you've%20assigned,same%20block%20as%20animation%2Dname. - Cheat Sheet for Animations*/

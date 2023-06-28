@@ -1,0 +1,109 @@
+@import '~style/helpers';//background color used
+@headerheight:77px;//77
+@bodyheight:630px;
+// https://dev.to/mcanam/how-to-make-adaptive-card-color-depending-on-image-background-555b - Would be cool but not likely
+
+// This is the div that contains the entire app in the main render() return
+// The height and width force it to behave like a mobile app
+.iphone {
+	background: @background;
+	color: white;	// The text colour of the screen
+	width: 393px;	// 414px
+	height: 852px;	// 736px
+	text-align: center;
+	overflow: hidden;
+	padding-top: 60px; // iphone 14 require 60px for status bar
+	margin: 0 auto; // To center the mobile app when on browser
+}
+
+
+// For all items inside the iphone display. Add a border to them and a bit of margin
+//.iphone > *{
+//	margin: 5px;
+//}
+
+// Inside of the main .iphone div there is a nav, header, footer and a main body
+
+// Header
+.iphone header{
+	padding: 5px;
+	height: @headerheight;
+	border-bottom: 1px solid @line;
+}
+
+// Footer is still currently a placeholder as of 07/03/2023
+.iphone .footer{
+	text-align: center;
+	font-size: 1rem;
+	width: 389px;
+	padding: 0.5rem;
+	margin: 0.2rem;
+
+	background: @widget-color;
+	color: white;
+	border-radius: 20px;
+}
+.bottombar{
+	border-top: 1px solid @line;
+
+}
+
+// Body
+	// By fixing the height of the main body and the header, leaving the footer alone, we can use "overflow: auto" so that if there is more
+	// information than space, you can just scroll in the space provided Essentially the header and footer are now fixed
+.iphone .body{
+	overflow: auto;//makes it scrollable
+	height: @bodyheight;//42.5
+	//-webkit-overflow-scrolling: touch;//not necessary
+	display: flex;					// Makes this a flex container and any child elements flex items
+	flex-direction: row;			// Makes the content go horizontally
+	flex-wrap: wrap;				// Wraps the content in a flex container. Off by default
+	justify-content: center;		// Aligns the content inside a flex container
+
+	
+}
+/* color of scrollbar when not click ,used light color, so it looks like its invisible but also kind of exist*/
+::-webkit-scrollbar {
+	width: 5px;
+}
+::-webkit-scrollbar-thumb {
+	background-color: grey;
+	border-radius: 20px;
+}
+  
+/* color when hover */
+::-webkit-scrollbar-thumb:hover {
+	background-color: rgba(0, 0, 0, 0.8);
+}	
+
+
+// Everything within the body
+.iphone .body > *{
+	background: #D9D9D9;
+	//color: white;
+	border: 0.5px solid white;
+	border-radius: 20px;
+	padding: 1rem;
+	//margin: 0.5rem;
+
+}
+
+	.wideWidget{
+		background: @widget-color;
+		//overflow-x: auto;
+		width: 370px;
+		margin:5px;
+		//padding: 10px;
+		
+		//height:300px
+	}
+
+
+/* width of scrollbar */
+
+  
+
+// Used for wind gusts since sometimes the API returns undefined
+.invisible {
+	display: none;
+}

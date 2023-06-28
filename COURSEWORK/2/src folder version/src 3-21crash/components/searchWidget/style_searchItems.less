@@ -1,0 +1,23 @@
+.searchLocations {
+    list-style-type: none;
+    //margin: 0; //not necessary
+    padding: 0; //keep position center
+  }
+
+  .searchLocations li {
+    font-size: 2rem;
+    border: 0.1rem solid black;
+    padding: 10px;
+    cursor: pointer;//added
+    transition: background-color 0.3s ease;//added
+  }
+
+  .searchLocations li:hover {
+    background-color: grey;
+  }
+
+//added,color change when click, looks better
+  .searchLocations li.active {
+    background-color: blue;
+    color: white;
+  }

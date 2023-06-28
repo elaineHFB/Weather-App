@@ -1,0 +1,104 @@
+@import '~style/helpers';//dont see use of it
+
+// https://dev.to/mcanam/how-to-make-adaptive-card-color-depending-on-image-background-555b - Would be cool but not likely
+
+// This is the div that contains the entire app in the main render() return
+// The height and width force it to behave like a mobile app
+.iphone {
+	//background-image: url('../../assets/backgrounds/clear-iphone.jpg');
+
+	background: linear-gradient(180deg, rgba(213, 213, 213, 0.75) 0%, #000000 100%);//change
+	color: white;	// The text colour of the screen
+	width: 393px;	// 414px
+	height: 852px;	// 736px
+	text-align: center;
+	overflow: hidden;
+	padding-top: 60px; // iphone 14 require 60px for status bar
+	margin: 0 auto; // To center the mobile app when on browser
+}
+
+
+// For all items inside the iphone display. Add a border to them and a bit of margin
+//.iphone > *{
+//	margin: 5px;
+//}
+
+// Inside of the main .iphone div there is a nav, header, footer and a main body
+
+// Header
+.iphone header{
+	padding: 5px;
+
+	border: 0.5px solid white;
+	//border-radius: 20px;
+
+	height: 44px;
+}
+
+// Footer is still currently a placeholder as of 07/03/2023
+.iphone .footer{
+	text-align: center;
+	font-size: 1rem;
+	padding: 0.5rem 6rem;
+	margin: 0.2rem;
+	margin-right: 0.5rem;
+
+	background: rgba(217, 217, 217, 0.7);
+	color: white;
+
+	border: 1px solid grey;
+	border-radius: 20px;
+}
+
+// Body
+	// By fixing the height of the main body and the header, leaving the footer alone, we can use "overflow: auto" so that if there is more
+	// information than space, you can just scroll in the space provided Essentially the header and footer are now fixed
+.iphone .body{
+	overflow: auto;
+
+	display: flex;					// Makes this a flex container and any child elements flex items
+	flex-direction: row;			// Makes the content go horizontally
+	flex-wrap: wrap;				// Wraps the content in a flex container. Off by default
+	justify-content: center;		// Aligns the content inside a flex container
+
+	height: 42.5rem;
+}
+
+// Everything within the body
+.iphone .body > *{
+	background: #D9D9D9;
+	border: 0.5px solid white;
+	border-radius: 20px;
+	padding: 1rem;
+	margin: 0.5rem;
+
+}
+
+
+
+
+
+
+
+
+
+.wideWidget{
+	width: 100%;
+	// background-color: red; // Debug
+}
+
+.smallWidget{
+	width: 40%;
+	height: 132px;
+	// background-color: blue; // Debug
+}
+
+// v0.2 from Josh somehow messes up the sizing of widgets, this accounts for it
+// .smallWidget >* {
+// 	height: 5rem;
+// }
+
+// Used for wind gusts since sometimes the API returns undefined
+.invisible {
+	display: none;
+}
